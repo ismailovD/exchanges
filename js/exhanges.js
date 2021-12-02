@@ -17,14 +17,14 @@ const   sideBarBtn = document.querySelector('.side-bar__btn'),
     
 sideBarBtn.addEventListener('click', () => {
     sideBar.classList.toggle('active');
-    if(sideBar.classList.contains('active')){
-        body.style.overflow ="hidden" 
-    }else body.style.overflow ="visible";
+    // if(sideBar.classList.contains('active')){
+    //     body.style.overflow ="hidden" 
+    // }else body.style.overflow ="visible";
 });
 closeSideBar.addEventListener('click', (e) => {
      if(e.target == closeSideBar){
         sideBar.classList.remove('active'); 
-        body.style.overflow ="visible";
+        // body.style.overflow ="visible";
      }
  })
 
