@@ -1040,6 +1040,9 @@ body {
         display: none
     }
 
+    .side-bar__item:hover .side-bar__count::after {
+        background: var(--blue);
+    }
     .side-bar__logo-img {
         display: none
     }
@@ -1108,6 +1111,8 @@ body {
     .side-bar.active .side-bar__help-icon {
         margin-right: 20px
     }
+
+    
 
     .side-bar__item:hover::before,
     .side-bar__settings:hover::before,
