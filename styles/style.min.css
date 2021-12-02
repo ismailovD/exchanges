@@ -345,7 +345,7 @@ body {
 
 .side-bar__dropdown-list {
     position: absolute;
-    top: 1.5em;
+    top: 1.6em;
     left: 0;
     width: 100%; 
     max-height: 0;
@@ -363,10 +363,11 @@ body {
 }
 
 .side-bar__dropdown.active .side-bar__dropdown-list {
-    max-height: fit-content;
-    border-top: 1px solid var(--dark-purple-opacity-30)
+    max-height: fit-content; 
 }
-
+.side-bar__dropdown-item:not(:last-child){
+    margin-bottom: 7px;
+}
 .side-bar__help {
     -ms-flex-item-align: end;
     align-self: flex-end;
