@@ -19,6 +19,7 @@ sideBarBtn.addEventListener('click', () => {
     if(sideBar.classList.contains('active')){  
             pageContent.style.marginLeft = "275px"; 
     }else {  
+        dropdownWindow.classList.remove('active')
         pageContent.style.marginLeft = "65px";  
     }
 });
