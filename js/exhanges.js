@@ -12,14 +12,18 @@ const   sideBarBtn = document.querySelector('.side-bar__btn'),
         speedRadio = document.querySelectorAll('.exchanges__speed-item .exchanges__radio'),
         speedChekcs = document.querySelectorAll('.exchanges__speed-input');
 
-let  paddinL =  window.getComputedStyle(pageContent, null).getPropertyValue("padding-left");
+
+let  paddinL = window.getComputedStyle(pageContent, null).getPropertyValue("padding-left");
+window.addEventListener('resize', ()=> {
+    paddinL =  window.getComputedStyle(pageContent, null).getPropertyValue("padding-left");
+}) 
     
-sideBarBtn.addEventListener('click', () => {
-    
+sideBarBtn.addEventListener('click', () => { 
     sideBar.classList.toggle('active');
     if(sideBar.classList.contains('active')){  
             pageContent.style.paddingLeft = parseInt(paddinL) + "px"; 
     }else { 
+        console.log(paddinL);
         pageContent.style.paddingLeft = parseInt(paddinL) - 215 + "px";  
     }
 });
