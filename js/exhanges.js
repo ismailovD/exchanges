@@ -14,8 +14,13 @@ const   sideBarBtn = document.querySelector('.side-bar__btn'),
 
 
 let  paddinL = window.getComputedStyle(pageContent, null).getPropertyValue("padding-left"); 
+
 window.addEventListener('resize', ()=> {
-    location.reload() 
+  if(window.innerWidth <= 1300 && window.innerWidth > 820) {
+    paddinL = 305;
+  }else if(window.innerWidth <= 820){
+    paddinL = 290;
+  }  ;
 }) 
     
 sideBarBtn.addEventListener('click', () => { 
