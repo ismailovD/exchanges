@@ -13,17 +13,16 @@ const   sideBarBtn = document.querySelector('.side-bar__btn'),
         speedChekcs = document.querySelectorAll('.exchanges__speed-input');
 
 
-let  paddinL = window.getComputedStyle(pageContent, null).getPropertyValue("padding-left");
+let  paddinL = window.getComputedStyle(pageContent, null).getPropertyValue("padding-left"); 
 window.addEventListener('resize', ()=> {
-    paddinL =  window.getComputedStyle(pageContent, null).getPropertyValue("padding-left");
+    location.reload() 
 }) 
     
 sideBarBtn.addEventListener('click', () => { 
     sideBar.classList.toggle('active');
     if(sideBar.classList.contains('active')){  
             pageContent.style.paddingLeft = parseInt(paddinL) + "px"; 
-    }else { 
-        console.log(paddinL);
+    }else {  
         pageContent.style.paddingLeft = parseInt(paddinL) - 215 + "px";  
     }
 });
