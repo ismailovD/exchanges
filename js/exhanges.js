@@ -1,7 +1,6 @@
 const   sideBarBtn = document.querySelector('.side-bar__btn'),
         sideBar = document.querySelector('.side-bar'),
-        closeSideBar = document.querySelector('.over__box'),
-        body = document.querySelector('.return__body'),
+        closeSideBar = document.querySelector('.over__box'), 
         selectBtns = document.querySelectorAll('.select__btn'),
         selectParent = '.select',
         selectItems = document.querySelectorAll('.select__item'), 
@@ -16,15 +15,11 @@ const   sideBarBtn = document.querySelector('.side-bar__btn'),
 
     
 sideBarBtn.addEventListener('click', () => {
-    sideBar.classList.toggle('active');
-    // if(sideBar.classList.contains('active')){
-    //     body.style.overflow ="hidden" 
-    // }else body.style.overflow ="visible";
+    sideBar.classList.toggle('active'); 
 });
 closeSideBar.addEventListener('click', (e) => {
      if(e.target == closeSideBar){
-        sideBar.classList.remove('active'); 
-        // body.style.overflow ="visible";
+        sideBar.classList.remove('active');  
      }
  })
 
