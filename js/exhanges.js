@@ -1,6 +1,6 @@
 const   sideBarBtn = document.querySelector('.side-bar__btn'),
         sideBar = document.querySelector('.side-bar'),
-        closeSideBar = document.querySelector('.over__box'), 
+        pageContent =document.querySelector('.return__content'), 
         selectBtns = document.querySelectorAll('.select__btn'),
         selectParent = '.select',
         selectItems = document.querySelectorAll('.select__item'), 
@@ -12,16 +12,18 @@ const   sideBarBtn = document.querySelector('.side-bar__btn'),
         speedRadio = document.querySelectorAll('.exchanges__speed-item .exchanges__radio'),
         speedChekcs = document.querySelectorAll('.exchanges__speed-input');
 
-
+let  paddinL =  window.getComputedStyle(pageContent, null).getPropertyValue("padding-left");
     
 sideBarBtn.addEventListener('click', () => {
-    sideBar.classList.toggle('active'); 
+    
+    sideBar.classList.toggle('active');
+    if(sideBar.classList.contains('active')){  
+            pageContent.style.paddingLeft = parseInt(paddinL) + "px"; 
+    }else { 
+        pageContent.style.paddingLeft = parseInt(paddinL) - 215 + "px";  
+    }
 });
-closeSideBar.addEventListener('click', (e) => {
-     if(e.target == closeSideBar){
-        sideBar.classList.remove('active');  
-     }
- })
+ 
 
 selectBtns.forEach(btn => { 
     btn.addEventListener('click', () => {  
