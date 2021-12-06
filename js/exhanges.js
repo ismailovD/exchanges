@@ -1,6 +1,6 @@
 const   sideBarBtn = document.querySelector('.side-bar__btn'),
-        sideBar = document.querySelector('.side-bar'),
-        pageContent =document.querySelector('.return__content'), 
+        sideBar = document.querySelector('.side-bar'), 
+        pageContent =document.querySelector('.global__content'),  
         selectBtns = document.querySelectorAll('.select__btn'),
         selectParent = '.select',
         selectItems = document.querySelectorAll('.select__item'), 
@@ -48,7 +48,10 @@ selectItems.forEach(item => {
 })  
 
 dropdownBtn.addEventListener('click', () => {
-    dropdownWindow.classList.toggle('active')
+    dropdownWindow.classList.toggle('active'); 
+    if(dropdownWindow.classList.contains('active')){
+        sideBar.classList.add('change-height')
+    }else sideBar.classList.remove('change-height')
 })
 
 mainCheckbox.addEventListener('change' , ()=> {
