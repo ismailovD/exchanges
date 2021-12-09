@@ -1,11 +1,15 @@
 const   sideBarBtn = document.querySelector('.side-bar__btn'),
         sideBar = document.querySelector('.side-bar'), 
         pageContent =document.querySelector('.global__content'),  
+        visitedPage = document.querySelectorAll('.global-item'),
+        userDropdown = document.querySelector('.global__auth'),
+        userBtn = document.querySelector('.user__dropdown-btn'),
         selectBtns = document.querySelectorAll('.select__btn'),
+        sideBarSet = '.side-bar__settings',
         selectParent = '.select',
         selectItems = document.querySelectorAll('.select__item'), 
-        dropdownWindow = document.querySelector('.side-bar__dropdown'),
-        dropdownBtn = document.querySelector('.side-bar__dropdown-btn'),
+        dropdownList = document.querySelector('.side-bar__settings'),
+        dropdownBtn = document.querySelector('.side-bar__dropdown'),
         mainCheckbox = document.querySelector('.main-checkbox'), 
         exchangeInputs = document.querySelectorAll('.exchanges__input'),
         speedItem = ".exchanges__speed-item",
@@ -19,7 +23,7 @@ sideBarBtn.addEventListener('click', () => {
     if(sideBar.classList.contains('active')){  
             pageContent.style.marginLeft = "275px"; 
     }else {  
-        dropdownWindow.classList.remove('active')
+        dropdownList.classList.remove('active')
         pageContent.style.marginLeft = "65px";  
     }
 });
@@ -36,6 +40,25 @@ selectBtns.forEach(btn => {
     });
 }) 
 
+userBtn.addEventListener('click', () => {
+    userDropdown.classList.toggle('open')
+});
+
+visitedPage.forEach(item => {
+    item.addEventListener('click', ()=> {
+        visitedPage.forEach(elem => {
+            elem.classList.remove('visited')
+            if(elem.closest(sideBarSet)){
+                elem.closest(sideBarSet).classList.remove('visited')
+            }
+        })
+        if(item.closest(sideBarSet)){ 
+            item.closest(sideBarSet).classList.add('visited')
+        }
+        item.classList.add('visited')
+    })
+})
+
 selectItems.forEach(item => {
      item.addEventListener('click', () => {
         selectItems.forEach(el => {
@@ -48,8 +71,8 @@ selectItems.forEach(item => {
 })  
 
 dropdownBtn.addEventListener('click', () => {
-    dropdownWindow.classList.toggle('active'); 
-    if(dropdownWindow.classList.contains('active')){
+    dropdownList.classList.toggle('active'); 
+    if(dropdownList.classList.contains('active')){
         sideBar.classList.add('change-height')
     }else sideBar.classList.remove('change-height')
 })
