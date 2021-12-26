@@ -14,7 +14,24 @@ const   sideBarBtn = document.querySelector('.side-bar__btn'),
         exchangeInputs = document.querySelectorAll('.exchanges__input'),
         speedItem = ".exchanges__speed-item",
         speedRadio = document.querySelectorAll('.exchanges__speed-item .exchanges__radio'),
-        speedChekcs = document.querySelectorAll('.exchanges__speed-input');
+        speedChekcs = document.querySelectorAll('.exchanges__speed-input'),
+        globalSearch = document.querySelector('.global__search-input'),
+        globalSearchDropdown = document.querySelector('.global__search-dropdown');
+        
+globalSearch.addEventListener('input', () => { 
+    if(globalSearch.value.length > 0){
+        globalSearchDropdown.classList.add('active');
+        setTimeout(()=> {
+            globalSearchDropdown.classList.add('show');
+        }, 100)
+    }else {
+        globalSearchDropdown.classList.remove('show');
+        setTimeout(()=> {
+            globalSearchDropdown.classList.remove('active');
+        }, 100)
+    }
+}) 
+
 
  
 
